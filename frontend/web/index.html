@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="$FLUTTER_BASE_HREF">
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta name="description" content="NEU-Pay – Campus Payment Platform">
+  <meta name="theme-color" content="#1565C0">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <title>NEU-Pay</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Manifest for PWA -->
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    /* Loading spinner shown while Flutter initialises */
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #fafafa;
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <div class="loading" id="loading">
+    <p>Loading NEU-Pay…</p>
+  </div>
+
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>

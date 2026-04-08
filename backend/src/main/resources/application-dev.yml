@@ -1,0 +1,11 @@
+# ── Dev-only overrides ──
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+logging:
+  level:
+    com.neupay: DEBUG
+    org.springframework.security: DEBUG

@@ -1,0 +1,55 @@
+name: neu_pay
+description: NEU-Pay – Cross-platform payment application (Web + Mobile).
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.5.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State Management
+  flutter_riverpod: ^2.6.1
+  riverpod_annotation: ^2.6.1
+
+  # Routing
+  go_router: ^14.8.1
+
+  # Networking
+  dio: ^5.7.0
+
+  # Auth / Secure Storage
+  flutter_appauth: ^7.0.1
+  flutter_secure_storage: ^9.2.4
+
+  # UI
+  google_fonts: ^6.2.1
+  flutter_svg: ^2.0.17
+
+  # Utilities
+  intl: ^0.19.0
+  logger: ^2.5.0
+  url_launcher: ^6.3.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  riverpod_generator: ^2.6.3
+  build_runner: ^2.4.14
+  custom_lint: ^0.7.1
+  riverpod_lint: ^2.6.3
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+
+  fonts:
+    - family: NeuPay
+      fonts:
+        - asset: assets/fonts/NeuPay-Regular.ttf

@@ -1,0 +1,55 @@
+# ──────────────────────────────────────────────
+# NEU-Pay Backend – Application Configuration
+# ──────────────────────────────────────────────
+
+spring:
+  application:
+    name: neupay-backend
+
+  # ── Datasource (MySQL) ──
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:neupay}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: ${DB_USERNAME:neupay}
+    password: ${DB_PASSWORD:neupay}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  # ── JPA / Hibernate ──
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          time_zone: UTC
+
+  # ── OAuth2 Resource Server (JWT) ──
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${OAUTH2_ISSUER_URI:http://localhost:8180/realms/neupay}
+
+# ── Server ──
+server:
+  port: ${SERVER_PORT:8080}
+  servlet:
+    context-path: /api
+
+# ── Actuator (health endpoint for Docker healthcheck) ──
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: when-authorized
+
+# ── Logging ──
+logging:
+  level:
+    com.neupay: INFO
+    org.springframework.security: INFO
