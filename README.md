@@ -6,6 +6,7 @@
 
 ## Table of Contents
 
+- [System Architecture and Its Design](#system-architecture-and-its-design)
 - [Architecture Overview](#architecture-overview)
 - [Tech Stack](#tech-stack)
 - [Project Structure](#project-structure)
@@ -17,6 +18,24 @@
 - [Spring Boot Backend](#spring-boot-backend)
 - [Environment Variables](#environment-variables)
 - [Contributing](#contributing)
+
+---
+
+## System Architecture and Its Design
+
+<p align="center">
+  <img src="assets/NEU%20Pay%20System%20Architecture.png" alt="NEU-Pay System Architecture" width="100%" />
+</p>
+
+The diagram above illustrates the end-to-end system architecture for NEU-Pay:
+
+- **Client Layer** — Users access the platform via **Android** or **iOS** devices, which connect to the NEU-Pay application.
+- **Role-Based Access** — The system routes users to role-specific interfaces:
+  - **Admin** → Performance Dashboard & Administrative Dashboard
+  - **User** → User Dashboard
+- **Google Cloud – Firewall** — All traffic passes through Google Cloud's security layer comprising **Cloud Armor**, **Cloud Firewall Rules**, and **Network Security** before reaching backend services.
+- **Google Cloud – External Data Sources** — Persistent data is stored in **Bare Metal Solutions** and **Cloud SQL**.
+- **Google Cloud – Serving Front-end and Backend** — Application workloads are deployed on **Cloud Run** (containerised) and **Compute Engine** (VM-based) for scalable serving.
 
 ---
 
